@@ -25,7 +25,6 @@ class NotesListViewController: UIViewController {
         return tv
     }()
     
-    
     let addButton: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "plus.circle.fill"))
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -43,13 +42,11 @@ class NotesListViewController: UIViewController {
         view.addSubview(notesTableView)
         view.addSubview(addButton)
         addButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addNewNoteTapped)))
-        layoutViews()
+        layoutSunbviews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        print(DetectLaunch.isFirst)
         
         if DetectLaunch.isFirst == false {
             fetchFromCoreData()
@@ -69,14 +66,22 @@ class NotesListViewController: UIViewController {
     }
  
     private func getDataFromPlist() {
+        
+        //Getting default note data from plist file
+        //Getting path to plist file
         guard let pathToFile = Bundle.main.path(forResource: "defaultNote", ofType: "plist") else { return }
         guard let plistDictionary = NSDictionary(contentsOfFile: pathToFile) else { return }
         guard let defaultTitle = plistDictionary.value(forKey: "title") else { return }
         guard let defaultText = plistDictionary.value(forKey: "text") else { return }
-        let entity = NSEntityDescription.entity(forEntityName: "Note", in: managedContext)
-        let note = NSManagedObject(entity: entity!, insertInto: managedContext) as! Note
+        
+        //Entity
+        guard let entity = NSEntityDescription.entity(forEntityName: "Note", in: managedContext) else { return }
+        let note = NSManagedObject(entity: entity, insertInto: managedContext) as! Note
+        
         note.title = defaultTitle as? String
         note.text = defaultText as? String
+        
+        //Save context to CoreData
         do {
            try managedContext.save()
         }
@@ -86,6 +91,8 @@ class NotesListViewController: UIViewController {
     }
     
     private func fetchFromCoreData() {
+        
+        //Fetching data from CoreData
         let fetchRequest : NSFetchRequest<Note> = Note.fetchRequest()
         do {
             let result = try managedContext.fetch(fetchRequest)
@@ -100,7 +107,7 @@ class NotesListViewController: UIViewController {
         navigationController?.pushViewController(NoteViewController(), animated: true)
     }
     
-    private func layoutViews() {
+    private func layoutSunbviews() {
         NSLayoutConstraint.activate([
             notesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             notesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -113,7 +120,6 @@ class NotesListViewController: UIViewController {
         ])
     }
 }
-
 
 
 extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -139,9 +145,7 @@ extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.font = Settings.shared.titleFont
         cell.descriptionLabel.font = Settings.shared.textFont
         return cell
-                
     }
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = NoteViewController()
