@@ -15,14 +15,11 @@ extension UIColor {
         }
         return (0, 0, 0, 0)
     }
-    
     var RGB: String {
         let rgbaCache = rgba
         return String(format: "#%02x%02x%02x", Int(round(rgbaCache.red * 255)), Int(round(rgbaCache.green * 255)), Int(round(rgbaCache.blue * 255)))
     }
 }
-
-
 
 extension UIColor {
     convenience init?(hexString: String?) {
@@ -72,6 +69,3 @@ extension UIColor {
         return CGFloat(Double(hexComponent) / 255.0)
     }
 }
-
-
-

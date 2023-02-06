@@ -20,6 +20,7 @@
 		A35FD022298ADBD000BFD723 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35FD021298ADBD000BFD723 /* NoteViewController.swift */; };
 		A3C799102991280F00570B86 /* FontPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7990F2991280F00570B86 /* FontPickerViewController.swift */; };
 		A3C7991229913B2F00570B86 /* UserDefaultFontSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7991129913B2F00570B86 /* UserDefaultFontSave.swift */; };
+		A3C79914299182FE00570B86 /* DetectLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C79913299182FE00570B86 /* DetectLaunch.swift */; };
 		A3E4A44E298DA5EE00A59782 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4A44D298DA5EE00A59782 /* TabBarController.swift */; };
 		A3E4A452298DA63800A59782 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4A451298DA63800A59782 /* SettingsViewController.swift */; };
 		A3E4A454298DA7BF00A59782 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4A453298DA7BF00A59782 /* Settings.swift */; };
@@ -41,6 +42,7 @@
 		A35FD021298ADBD000BFD723 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A3C7990F2991280F00570B86 /* FontPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerViewController.swift; sourceTree = "<group>"; };
 		A3C7991129913B2F00570B86 /* UserDefaultFontSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultFontSave.swift; sourceTree = "<group>"; };
+		A3C79913299182FE00570B86 /* DetectLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLaunch.swift; sourceTree = "<group>"; };
 		A3E4A44D298DA5EE00A59782 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A3E4A451298DA63800A59782 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3E4A453298DA7BF00A59782 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				A3366C63299035BD0055FBCB /* UIColorToHEX.swift */,
 				A3C7991129913B2F00570B86 /* UserDefaultFontSave.swift */,
+				A3C79913299182FE00570B86 /* DetectLaunch.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				A35FD01D298AB32000BFD723 /* NotesTableViewCell.swift in Sources */,
 				A35FD006298AAE9C00BFD723 /* SceneDelegate.swift in Sources */,
 				A35FD00E298AAE9C00BFD723 /* NotesApp.xcdatamodeld in Sources */,
+				A3C79914299182FE00570B86 /* DetectLaunch.swift in Sources */,
 				A35FD020298ABC9C00BFD723 /* Notes.swift in Sources */,
 				A3E4A452298DA63800A59782 /* SettingsViewController.swift in Sources */,
 			);

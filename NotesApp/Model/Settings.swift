@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-
-
 class Settings {
     static let shared: Settings = .init()
     var notesColor: String?
@@ -18,12 +16,4 @@ class Settings {
 }
 
 
-var pickerData = [Int]()
-
-
-func populatePickerData(){
-    for i in 20...100 {
-         pickerData.append(i)
-    }
-}
 

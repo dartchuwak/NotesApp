@@ -17,7 +17,6 @@ class TabBarController: UITabBarController {
                            ]
     }
     
-    
     fileprivate func createNavigationController( viewController: UIViewController, title: String , image: String) -> UIViewController {
         let navController = UINavigationController(rootViewController: viewController)
         navController.navigationBar.prefersLargeTitles = false

@@ -10,7 +10,6 @@ import UIKit
 class NotesTableViewCell: UITableViewCell {
     
     var color: UIColor?
-    
     var fontSize: CGFloat?
     
     let titleLabel: UILabel = {
@@ -45,9 +44,6 @@ class NotesTableViewCell: UITableViewCell {
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
         ])
     }
-    
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
