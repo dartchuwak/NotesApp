@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3102F9429A16C98000C111B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3102F9329A16C98000C111B /* SnapKit */; };
 		A3366C64299035BD0055FBCB /* UIColorToHEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3366C63299035BD0055FBCB /* UIColorToHEX.swift */; };
 		A357183D298C317000ACA128 /* defaultNote.plist in Resources */ = {isa = PBXBuildFile; fileRef = A357183C298C317000ACA128 /* defaultNote.plist */; };
 		A35FD004298AAE9C00BFD723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35FD003298AAE9C00BFD723 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3102F9429A16C98000C111B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +150,9 @@
 			dependencies = (
 			);
 			name = NotesApp;
+			packageProductDependencies = (
+				A3102F9329A16C98000C111B /* SnapKit */,
+			);
 			productName = NotesApp;
 			productReference = A35FD000298AAE9C00BFD723 /* NotesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = A35FCFF7298AAE9C00BFD723;
+			packageReferences = (
+				A3102F9229A16C98000C111B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = A35FD001298AAE9C00BFD723 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -424,6 +432,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3102F9229A16C98000C111B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3102F9329A16C98000C111B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3102F9229A16C98000C111B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A35FD00C298AAE9C00BFD723 /* NotesApp.xcdatamodeld */ = {

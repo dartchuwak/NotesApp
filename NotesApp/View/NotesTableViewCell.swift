@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class NotesTableViewCell: UITableViewCell {
     
@@ -34,15 +35,15 @@ class NotesTableViewCell: UITableViewCell {
         self.layer.cornerRadius = 15
         self.selectionStyle = .none
         
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-        ])
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview().inset(10)
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp_bottomMargin).inset(-10)
+            make.leading.trailing.equalToSuperview().inset(10)
+        }
     }
     
     required init?(coder: NSCoder) {
