@@ -35,7 +35,7 @@ class NotesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.title = "My notes"
+        title = "My notes"
         notesTableView.delegate = self
         notesTableView.dataSource = self
         notesTableView.register(NotesTableViewCell.self, forCellReuseIdentifier: cellId)
@@ -108,11 +108,15 @@ class NotesListViewController: UIViewController {
     }
     
     private func layoutSunbviews() {
+        notesTableView.snp.makeConstraints { make in
+            make.trailing.leading.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        
         NSLayoutConstraint.activate([
-            notesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            notesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            notesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            notesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0 ),
+//            notesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+//            notesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+//            notesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+//            notesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0 ),
             addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             addButton.widthAnchor.constraint(equalToConstant: 50),
@@ -124,15 +128,15 @@ class NotesListViewController: UIViewController {
 
 extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+         1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+         200
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return notesArray.count
+         notesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -156,7 +160,7 @@ extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
         vc.title = "Edit note"
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, complete in
@@ -179,7 +183,7 @@ extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+         true
     }
 }
 
